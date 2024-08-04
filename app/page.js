@@ -21,7 +21,7 @@ export default function Home() {
   const [searchItemName, setSearchItemName] = useState('');
   const [searchResult, setSearchResult] = useState(null);
 
-
+//
   const updateInventory = async () => {
     const snapshot = query(collection(firestore, 'inventory'))
     const docs = await getDocs(snapshot)
@@ -243,7 +243,7 @@ const searchItem = async () => {
               Search
             </Button>
           </Stack>
-          {searchResult && (
+          {searchResult !== null && (
             <Box mt={3}>
               <Typography variant="h6">Search Result</Typography>
               <Box border="1px solid #333" padding={2} mt={2}>
